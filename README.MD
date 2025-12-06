@@ -10,38 +10,18 @@ An AI-powered web application that tracks exercises using computer vision and pr
 - Exercise form feedback
 - Progress tracking
 - Web interface for easy access
-
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/fitness-trainer-pose-estimation.git
-   cd fitness-trainer-pose-estimation
-   ```
-
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-3. Set up the static folder structure:
-   ```
-   mkdir -p static/images
-   ```
-
-4. Add exercise images to the static/images folder:
-   - squat.png
-   - push_up.png
-   - hammer_curl.png
+- Real time accuracy using trained models
 
 ## Usage
 
 1. Start the Flask server:
+
    ```
    python app.py
    ```
 
 2. Open a web browser and navigate to:
+
    ```
    http://127.0.0.1:5000
    ```
@@ -61,6 +41,8 @@ An AI-powered web application that tracks exercises using computer vision and pr
 - `exercises/` - Exercise tracking classes
 - `feedback/` - User feedback modules
 - `utils/` - Helper functions and utilities
+- `models/` - save all trained models and scalers
+- `Datasets/` - datasets used to train the models
 
 ## Technologies Used
 
@@ -68,10 +50,7 @@ An AI-powered web application that tracks exercises using computer vision and pr
 - OpenCV - Computer vision
 - MediaPipe - Pose estimation
 - HTML/CSS/JavaScript - Frontend
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Machine learning models like SVM, LR etc
 
 ## License
 
