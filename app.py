@@ -3,7 +3,7 @@ import cv2
 import threading
 import time
 import sys
-import traceback
+import trachseback
 import logging
 
 # Set up logging
@@ -88,6 +88,7 @@ def generate_frames():
     
     while True:
         if camera is None:
+            time.sleep(0.3)
             continue
             
         success, frame = camera.read()
@@ -124,14 +125,14 @@ def generate_frames():
                     exercise_counter = max(counter_right, counter_left)
                 
                 # Display exercise information
-                if ml_label is not None:
-                    text = "Correct" if ml_label == 1 else "Incorrect"
-                    draw_text_with_background(frame, f"ML Form: {text}", (40, 170),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (255,255,255),(0,150,255),1)
+                # if ml_label is not None:
+                #     text = "Correct" if ml_label == 1 else "Incorrect"
+                #     draw_text_with_background(frame, f"ML Form: {text}", (40, 170),
+                #     cv2.FONT_HERSHEY_DUPLEX, 0.7, (255,255,255),(0,150,255),1)
 
-                if ml_confidence is not None:
-                    draw_text_with_background(frame, f"Confidence: {int(ml_confidence*100)}%", (40, 200),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (255,255,255),(0,150,255),1)
+                # if ml_confidence is not None:
+                #     draw_text_with_background(frame, f"Confidence: {int(ml_confidence*100)}%", (40, 200),
+                #     cv2.FONT_HERSHEY_DUPLEX, 0.7, (255,255,255),(0,150,255),1)
 
                 exercise_info = get_exercise_info(current_exercise_data['type'])
                 draw_text_with_background(frame, f"Exercise: {exercise_info.get('name', 'N/A')}", (40, 50),

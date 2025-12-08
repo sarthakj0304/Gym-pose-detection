@@ -59,7 +59,7 @@ class Squat:
 
         features = np.array(features).reshape(1, -1)
 
-        # 🔥 APPLY SCALING
+        #  APPLY SCALING
         if self.scaler is not None:
             try:
                 features = self.scaler.transform(features)
